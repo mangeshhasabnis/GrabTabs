@@ -1,0 +1,14 @@
+{
+    "name": "GrabTabs",
+    "version": "1.0",
+    "description": "A chrome extension to bookmark all open tabs in a single click.",
+    "permissions": ["tabs", "bookmarks"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_title": "GrabTabs"
+    },
+    "manifest_version": 2
+}
