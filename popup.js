@@ -1,4 +1,5 @@
-import {CheckParentBookmarkFolderExists, CreateGroupBookmark}
+import {CheckParentBookmarkFolderExists, 
+    CreateGroupBookmark, CreateCurrentFolder}
     from './background.js';
 
 
@@ -7,5 +8,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function OnOkClickHandler() {
-    CheckParentBookmarkFolderExists().then(CreateGroupBookmark);
+    const textboxElement = document.getElementById("txtFolderName");
+
+    CreateCurrentFolder(textboxElement.value);
+    // CheckParentBookmarkFolderExists().then(CreateGroupBookmark);
 }

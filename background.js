@@ -3,21 +3,40 @@ Author: Mangesh Hasabnis
 */
 
 const ParentBookmarFolder = 'GrabTabs Bookmarks';
+var currentFolderName = '';
 
 // chrome.browserAction.onClicked.addListener(function() {
 //     CheckParentBookmarkFolderExists().then(CreateGroupBookmark);
 // });
 
+const CreateCurrentFolder = (folderName) => {
+    currentFolderName = folderName;
+    CheckParentBookmarkFolderExists().then(CreateGroupBookmark);
+};
+
+const CheckParentBookmarkFolderExists = () => {
+    return new Promise(function(resolve, reject) {
+        chrome.bookmarks.search(ParentBookmarFolder, function(bookmarks) {
+            resolve(bookmarks);
+        });
+    })
+};
+
 const CreateGroupBookmark = (bookmarks) => {
     GetRootFolder(bookmarks).then(function(parentBookmark) {
         GetAllTabs().then(function(tabs) {
-            CreateBookmark(tabs, parentBookmark.id);
+            chrome.bookmarks.create({
+                'title': currentFolderName,
+                'parentId': parentBookmark.id
+            }, function(newFolder) {
+                CreateBookmark(tabs, newFolder.id);
+            });
+            
         })
     });
-}
+};
 
 function GetAllTabs() {
-
     var tabQueryInfo = {
         currentWindow: true
     };
@@ -28,7 +47,7 @@ function GetAllTabs() {
         });
     })
 
-}
+};
 
 function CreateBookmark(tabs, parentId) {
     for(let tab in tabs) {
@@ -39,7 +58,7 @@ function CreateBookmark(tabs, parentId) {
             'url': tabs[tab].url
         });
     }
-}
+};
 
 function GetRootFolder(bookmarks) {
     return new Promise(function(resolve) {
@@ -60,17 +79,10 @@ function GetRootFolder(bookmarks) {
     });
 };
 
-const CheckParentBookmarkFolderExists = () => {
-    return new Promise(function(resolve, reject) {
-        chrome.bookmarks.search(ParentBookmarFolder, function(bookmarks) {
-            resolve(bookmarks);
-        });
-    })
-}
-
 export {
     CheckParentBookmarkFolderExists,
-    CreateGroupBookmark
+    CreateGroupBookmark,
+    CreateCurrentFolder
 };
 
 
