@@ -80,8 +80,6 @@ function GetRootFolder(bookmarks) {
 };
 
 export {
-    CheckParentBookmarkFolderExists,
-    CreateGroupBookmark,
     CreateCurrentFolder
 };
 
