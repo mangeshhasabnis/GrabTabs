@@ -1,10 +1,10 @@
 const mainWebpackConfig = require("./webpack.config.js");
 const path = require("path");
 
-const files = ["index.test.js"];
+const files = ["background.test.js"];
 
 const preprocessors = {
-  "index.test.js": ["webpack"]
+  "background.test.js": ["webpack"]
 };
 
 const karmaWebpackConfig = Object.assign({}, mainWebpackConfig(), {
