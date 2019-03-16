@@ -5,7 +5,7 @@
     "permissions": ["tabs", "bookmarks"],
     "browser_action": {
         "default_title": "GrabTabs",
-        "default_popup": "popup.html"
+        "default_popup": "src/popup.html"
     },
     "manifest_version": 2
 }
