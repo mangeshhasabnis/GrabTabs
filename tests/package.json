@@ -1,0 +1,36 @@
+{
+  "name": "grabtabs_tests",
+  "version": "1.0.0",
+  "description": "Tests for the grabtabs extension",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mangeshhasabnis/GrabTabs.git"
+  },
+  "author": "Mangesh Hasabnis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mangeshhasabnis/GrabTabs/issues"
+  },
+  "homepage": "https://github.com/mangeshhasabnis/GrabTabs#readme",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "copy-webpack-plugin": "^5.0.1",
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.3.1",
+    "karma": "^4.0.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.2",
+    "karma-jasmine": "^2.0.1",
+    "karma-spec-reporter": "0.0.32",
+    "karma-webpack": "^3.0.5",
+    "webpack": "^4.29.6"
+  }
+}
