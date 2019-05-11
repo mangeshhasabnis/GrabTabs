@@ -58,6 +58,7 @@ function CreateBookmark(tabs, parentId) {
             'url': tabs[tab].url
         });
     }
+    window.close();
 };
 
 function GetRootFolder(bookmarks) {

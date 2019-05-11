@@ -55,5 +55,11 @@ describe("background.js ", () => {
         CreateCurrentFolder("test_folder");
         expect(chrome.bookmarks.create.notCalled).toBe(true);
     });
+
+    // // Need to work on this.
+    // it('should close the popup when OK is clicked', () => {
+    //     CreateCurrentFolder("test_folder");
+    // });
+
   });
 });
