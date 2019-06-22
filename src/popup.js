@@ -3,11 +3,11 @@ import {CreateCurrentFolder}
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById("btnOk").onclick = OnOkClickHandler;
+    document.getElementById("btn-ok").onclick = OnOkClickHandler;
 });
 
 function OnOkClickHandler() {
-    const textboxElement = document.getElementById("txtFolderName");
+    const textboxElement = document.getElementById("txt-folder-name");
 
     CreateCurrentFolder(textboxElement.value);
 }
