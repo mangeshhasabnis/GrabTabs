@@ -1,0 +1,22 @@
+{
+  "name": "grabtabs",
+  "version": "0.0.1",
+  "description": "Grabtabs is a chrome extension to bookmark multiple tabs in a single click",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mangeshhasabnis/GrabTabs.git"
+  },
+  "author": "Mangesh Hasabnis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mangeshhasabnis/GrabTabs/issues"
+  },
+  "homepage": "https://github.com/mangeshhasabnis/GrabTabs#readme"
+}
